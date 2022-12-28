@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="role.allocation" id="sd_demo_data">
+            <field name="name">Software Developer</field>
+        </record>
+        <record model="role.allocation" id="ba_demo_data">
+            <field name="name">Business Analyst</field>
+        </record>
+        <record model="role.allocation" id="sre_demo_data">
+            <field name="name">Site Reliability Engineer</field>
+        </record>
+        <record model="role.allocation" id="cse_demo_data">
+            <field name="name">Cloud Security Engineer</field>
+        </record>
+        <record model="role.allocation" id="de_demo_data">
+            <field name="name">Devops Engineer</field>
+        </record>
+    </data>
+</odoo>

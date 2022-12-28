@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="equipment.allocation" id="acer_demo_data">
+            <field name="name">Acer Laptop</field>
+        </record>
+        <record model="equipment.allocation" id="asus_demo_data">
+            <field name="name">Asus Laptop</field>
+        </record>
+        <record model="equipment.allocation" id="lenovo_demo_data">
+            <field name="name">Lenovo Thinkpad</field>
+        </record>
+        <record model="equipment.allocation" id="dell_demo_data">
+            <field name="name">Dell Mouse</field>
+        </record>
+        <record model="equipment.allocation" id="headphone_demo_data">
+            <field name="name">Headphones</field>
+        </record>
+    </data>
+</odoo>
