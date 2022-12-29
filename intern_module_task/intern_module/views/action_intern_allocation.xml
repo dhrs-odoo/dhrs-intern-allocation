@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="intern_menu_root" name="Intern_Desk_Allocation">
-        <menuitem id="desks_menu" name="Desks">
-            <menuitem id="desks_sub_menu" name="Desks Types">
-                <menuitem id="intern_model_menu_u" action="intern_model_Udesk_action" />
-                <menuitem id="intern_model_menu_l" action="intern_model_Ldesk_action" />
-            </menuitem>
+    <menuitem id="intern_menu_root" name="Intern_Desk_Allocation" action="intern_action">
+        <menuitem id="desks_menu" name="Desks" action="desks_action">
 
         </menuitem>
+        
         <menuitem id="equipments_menu" name="Equipments" action="equipment_action">
         </menuitem>
         <menuitem id="intern_role_menu" name="Intern Role" action="intern_role_action"></menuitem>

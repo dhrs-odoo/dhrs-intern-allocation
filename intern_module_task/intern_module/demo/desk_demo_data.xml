@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="desk.allocation" id="u_demo_data">
+            <field name="name">U Shape</field>
+            <field name="desk_no">3</field>
+        </record>
+        <record model="desk.allocation" id="l_demo_data">
+            <field name="name">L Shape</field>
+            <field name="desk_no">4</field>
+        </record>
+        <record model="desk.allocation" id="straight_demo_data">
+            <field name="name">Straight Desk</field>
+            <field name="desk_no">7</field>
+        </record>
+        <record model="desk.allocation" id="curve_demo_data">
+            <field name="name">Curve Desk</field>
+            <field name="desk_no">10</field>
+        </record>
+    </data>
+</odoo>

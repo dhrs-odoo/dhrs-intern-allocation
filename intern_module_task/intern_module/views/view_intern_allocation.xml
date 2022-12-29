@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record id="intern_model_Udesk_action" model="ir.actions.act_window">
-            <field name="name">U Shape</field>
+        <record id="intern_action" model="ir.actions.act_window">
+            <field name="name">Intern_Desk_Allocation</field>
             <field name="res_model">intern.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <record id="intern_model_Ldesk_action" model="ir.actions.act_window">
+        <record id="desks_action" model="ir.actions.act_window">
+            <field name="name">Desks</field>
+            <field name="res_model">desk.allocation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- <record id="intern_model_Ldesk_action" model="ir.actions.act_window">
             <field name="name">L Shape</field>
             <field name="res_model">intern.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
+        <record id = "desk_no_menu_action" model="ir.actions.act_window">
+            <field name="name">Desk 1</field>
+            <field name="res_model">intern.allocation</field>
+            <field name="view_mode">tree,form</field>
+        </record> -->
         <record id="equipment_action" model="ir.actions.act_window">
             <field name="name">Equipments</field>
             <field name="res_model">equipment.allocation</field>
@@ -28,14 +38,14 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name" />
-                    <field name="cllg_name" optional='hide'/>
+                    <field name="cllg_name" optional='hide' />
                     <field name="contact_details" />
-                    <field name="joining_date"  />
-                   
+                    <field name="joining_date" />
+                    
+
                 </tree>
             </field>
         </record>
-
 
 
         <record id="model_view_form" model="ir.ui.view">
@@ -55,13 +65,21 @@
                             <group>
                                 <field name="cllg_name" />
                                 <field name="joining_date" />
-                                <field name='equipment_type' widget='many2many_tags'/>
+                                <field name='equipment_type' widget='many2many_tags' />
+                                <field name='desk_name'/>
                             </group>
                             <group>
-                                <field name="intern_type" widget='many2many_tags' />
+                                <field name="intern_type" />
                                 <field name="contact_details" />
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Description">
+                                <group>
+                                    <field name="description"></field>
+                                </group>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
 
