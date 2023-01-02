@@ -12,7 +12,7 @@ class internDesk(models.Model):
      equipment_type = fields.Many2many("equipment.allocation" , string='Equipments')
      intern_type = fields.Many2one("role.allocation",string='Intern Role')
      description = fields.Char(string='Description')
-     desk_name=fields.Many2one("desk.allocation", string="Desk Name")
+     desk_no=fields.Many2one("desk.allocation", string="Desk No")
      
      state = fields.Selection(selection = [('new','New'),('allocated','Allocated')],default='new')
   
