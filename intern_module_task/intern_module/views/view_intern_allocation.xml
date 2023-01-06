@@ -11,16 +11,7 @@
             <field name="res_model">desk.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <!-- <record id="intern_model_Ldesk_action" model="ir.actions.act_window">
-            <field name="name">L Shape</field>
-            <field name="res_model">intern.allocation</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-        <record id = "desk_no_menu_action" model="ir.actions.act_window">
-            <field name="name">Desk 1</field>
-            <field name="res_model">intern.allocation</field>
-            <field name="view_mode">tree,form</field>
-        </record> -->
+
         <record id="equipment_action" model="ir.actions.act_window">
             <field name="name">Equipments</field>
             <field name="res_model">equipment.allocation</field>
@@ -65,11 +56,11 @@
                             <group>
                                 <field name="cllg_name" />
                                 <field name="joining_date" />
-                                <field name='equipment_type' widget='many2many_tags' />
+                                <field name='equipment_type' widget='many2many_tags' options="{'color_field': 'color'}"/>
                                 <field name='desk_no'/>
                             </group>
                             <group>
-                                <field name="intern_type" />
+                                <field name="intern_type"/>
                                 <field name="contact_details" />
                             </group>
                         </group>

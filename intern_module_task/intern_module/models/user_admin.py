@@ -14,6 +14,7 @@ class internDesk(models.Model):
      description = fields.Char(string='Description')
      desk_no=fields.Many2one("desk.allocation", string="Desk No")
      
+     
      state = fields.Selection(selection = [('new','New'),('allocated','Allocated')],default='new')
   
      

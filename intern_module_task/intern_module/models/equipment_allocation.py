@@ -10,3 +10,4 @@ class equipmentAllocation(models.Model):
      location = fields.Char(string = 'Used in Location')
      war_expire =fields.Date(string='Warranty Expiration Date')
      mac_address=fields.Char(string="Mac Address")
+     color = fields.Integer()
