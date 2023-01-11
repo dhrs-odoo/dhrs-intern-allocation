@@ -17,6 +17,11 @@
             <field name="res_model">equipment.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
+        <record id="laptop_action" model="ir.actions.act_window">
+            <field name = "name">Laptops</field>
+            <field name="res_model">equipment.allocation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
         <record id="intern_role_action" model="ir.actions.act_window">
             <field name="name">Intern Role</field>
             <field name="res_model">role.allocation</field>
@@ -56,12 +61,13 @@
                             <group>
                                 <field name="cllg_name" />
                                 <field name="joining_date" />
-                                <field name='equipment_type' widget='many2many_tags' options="{'color_field': 'color'}"/>
+                                <field name='Laptop_assigned'/>
                                 <field name='desk_no'/>
                             </group>
                             <group>
                                 <field name="intern_type"/>
                                 <field name="contact_details" />
+                                <field name="other_equipments" widget="many2many_tags" options="{'color_field': 'color'}"/>
                             </group>
                         </group>
                         <notebook>

@@ -7,6 +7,7 @@
         
         <menuitem id="equipments_menu" name="Equipments" action="equipment_action">
         </menuitem>
+        <menuitem id="laptop_menu" name="Laptops" action="laptop_action"></menuitem>
         <menuitem id="intern_role_menu" name="Intern Role" action="intern_role_action"></menuitem>
     </menuitem>
 </odoo>
