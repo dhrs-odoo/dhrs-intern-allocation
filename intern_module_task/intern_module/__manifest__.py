@@ -11,14 +11,16 @@
         'views/action_intern_allocation.xml',
         'views/intern_role_allocation.xml',
         'views/desk_view.xml',
-        'views/equipment_view.xml',
+        'views/laptop_view.xml',
+        'views/view_equipment.xml',
     ],
     
     'demo' : [
-        'demo/demo_data.xml',
-        'demo/intern_role_demo.xml',
+        'demo/laptop_demo_data.xml',
         'demo/fields_demo_data.xml',
+        'demo/intern_role_demo.xml',
         'demo/desk_demo_data.xml',
+        'demo/other_equipment_demo_data.xml',
     ],
     
     'application' : True,

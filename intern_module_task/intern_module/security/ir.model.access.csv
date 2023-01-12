@@ -3,3 +3,4 @@ access_intern_allocation,access_intern_allocation,model_intern_allocation,base.g
 intern_module.access_equipment_allocation,access_equipment_allocation,intern_module.model_equipment_allocation,base.group_user,1,1,1,1
 intern_module.access_role_allocation,access_role_allocation,intern_module.model_role_allocation,base.group_user,1,1,1,1
 intern_module.access_desk_allocation,access_desk_allocation,intern_module.model_desk_allocation,base.group_user,1,1,1,1
+intern_module.access_laptop_allocation,access_laptop_allocation,intern_module.model_laptop_allocation,base.group_user,1,1,1,1

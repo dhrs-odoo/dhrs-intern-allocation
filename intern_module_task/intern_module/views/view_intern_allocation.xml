@@ -18,8 +18,8 @@
             <field name="view_mode">tree,form</field>
         </record>
         <record id="laptop_action" model="ir.actions.act_window">
-            <field name = "name">Laptops</field>
-            <field name="res_model">equipment.allocation</field>
+            <field name="name">Laptops</field>
+            <field name="res_model">laptop.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
         <record id="intern_role_action" model="ir.actions.act_window">
@@ -37,8 +37,6 @@
                     <field name="cllg_name" optional='hide' />
                     <field name="contact_details" />
                     <field name="joining_date" />
-                    
-
                 </tree>
             </field>
         </record>
@@ -51,8 +49,14 @@
                 <form>
                     <header>
                         <field name="state" widget="statusbar" options="{'clickable':'1'}" />
+                        <button name="allocated_button" widget="statusbar" options="{'clickable':'1'}"
+                            string='Allocated' type='object' />
+                        <button name="pending_button" widget="statusbar" options="{'clickable':'1'}"
+                            string='Pending' type='object' />
                     </header>
                     <sheet>
+                        <widget name="web_ribbon" title="Pending" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'pending')]}"/>
+                        <widget name="web_ribbon" title="Allocated" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'allocated')]}"/>
                         <label for="name">Name</label>
                         <h1>
                             <field name="name" />
@@ -61,13 +65,16 @@
                             <group>
                                 <field name="cllg_name" />
                                 <field name="joining_date" />
-                                <field name='Laptop_assigned'/>
-                                <field name='desk_no'/>
+                                <field name='laptop_assigned' />
+                                <field name='desk_no' />
+                                <field name="status" invisible = '1'/>
                             </group>
                             <group>
-                                <field name="intern_type"/>
-                                <field name="contact_details" />
-                                <field name="other_equipments" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <field name="intern_type" />
+                                <field name="contact_details" widget="phone" />
+                                <field name="other_equipments" widget="many2many_tags"
+                                    options="{'color_field': 'color'}" />
+                                <field name="email_id" widget="email" />
                             </group>
                         </group>
                         <notebook>
@@ -80,6 +87,27 @@
                     </sheet>
                 </form>
 
+            </field>
+        </record>
+
+        <record id="intern_allocation_search" model="ir.ui.view">
+            <field name="name">Intern Allocation</field>
+            <field name="model">intern.allocation</field>
+            <field name="arch" type="xml">
+                <search string="Intern Allocation">
+                    <field name="name"/>
+                    <field name="laptop_assigned"/>
+                    <field name="cllg_name"/>
+                    <field name="other_equipments"/>
+                    <field name="intern_type"/>
+
+                    <group expand="1" string="Group By">
+                        <filter string="Laptop Assigned" name="laptop_assigned" context="{'group_by':'laptop_assigned'}" />
+                        <separator />
+                        <filter string="College Name" name="cllg_name"
+                            context="{'group_by': 'cllg_name'}" />
+                    </group> 
+                </search>
             </field>
         </record>
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="laptop.allocation" id="acer_demo_data">
+            <field name="name">Acer Laptop</field>
+            <field name="technician_name">Ankur Ramoliya</field>
+            <field name="model">acer Aspire 7</field>
+            <field name="location">"Infocity"</field>
+        </record>
+        <record model="laptop.allocation" id="asus_demo_data">
+            <field name="name">Asus Laptop</field>
+            <field name="technician_name">Ankur Ramoliya</field>
+            <field name="model">Asus TUF</field>
+            <field name="location">"Infocity"</field>
+        </record>
+        <record model="laptop.allocation" id="lenovo_demo_data">
+            <field name="name">Lenovo Laptop</field>
+            <field name="technician_name">Ankur Ramoliya</field>
+            <field name="model">Lenovo legion</field>
+            <field name="location">"Infocity"</field>
+        </record>
+        <record model="laptop.allocation" id="dell_laptop_demo_data">
+            <field name="name">Dell Laptop</field>
+            <field name="technician_name">Ankur Ramoliya</field>
+            <field name="model">Dell Allienware</field>
+            <field name="location">"Infocity"</field>
+        </record>
+        <record model="laptop.allocation" id="hp_demo_data">
+            <field name="name">HP Laptop</field>
+            <field name="technician_name">Ankur Ramoliya</field>
+            <field name="model">HP Omen</field>
+            <field name="location">"Infocity"</field>
+        </record>
+    </data>
+</odoo>
