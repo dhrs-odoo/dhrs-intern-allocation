@@ -10,4 +10,4 @@ class laptopAllocation(models.Model):
      location = fields.Char(string = 'Used in Location')
      war_expire =fields.Date(string='Warranty Expiration Date')
      mac_address=fields.Char(string="Mac Address")
-     
+     intern_name_ids=fields.One2many("intern.allocation", 'laptop_assigned', string="Intern Name" )
