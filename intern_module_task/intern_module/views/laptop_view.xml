@@ -40,7 +40,7 @@
                 <notebook>
                     <page name="intern">
                         <field name="intern_name_ids" type="xml">
-                            <tree>
+                            <tree editable = 'bottom'>
                                 <field name="name"></field>
                                 <field name="email_id"></field>
                             </tree>

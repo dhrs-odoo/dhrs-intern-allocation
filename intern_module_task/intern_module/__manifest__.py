@@ -3,7 +3,7 @@
 {
     'name':'Intern Management',
     'author' : 'Dhrumil Shah',
-    'depends' : ['base'],
+    'depends' : ['base','mail'],
     'version' : '1.0',
     'data' : [
         'security/ir.model.access.csv',
@@ -13,6 +13,7 @@
         'views/desk_view.xml',
         'views/laptop_view.xml',
         'views/view_equipment.xml',
+        'views/functional_training_view.xml',
     ],
     
     'demo' : [

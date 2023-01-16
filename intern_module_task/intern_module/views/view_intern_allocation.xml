@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="intern_action" model="ir.actions.act_window">
-            <field name="name">Intern_Desk_Allocation</field>
+            <field name="name">Intern Desk Allocation</field>
             <field name="res_model">intern.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
@@ -27,16 +27,32 @@
             <field name="res_model">role.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
+        <record id="functional_action" model="ir.actions.act_window">
+            <field name="name">Functional Training</field>
+            <field name="res_model">functional.training</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="tech_front_action" model="ir.actions.act_window">
+            <field name="name">Technical Frontend Training</field>
+            <field name="res_model">intern.allocation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="tech_back_action" model="ir.actions.act_window">
+            <field name="name">Technical Backend Training</field>
+            <field name="res_model">intern.allocation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
         <record id="model_view_tree" model="ir.ui.view">
             <field name="name">Tree.View</field>
             <field name="model">intern.allocation</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree decoration-success="state in ('allocated')" decoration-danger="state in ('pending')">
                     <field name="name" />
                     <field name="cllg_name" optional='hide' />
                     <field name="contact_details" />
                     <field name="joining_date" />
+                    <field name="state" invisible='1'/>
                 </tree>
             </field>
         </record>
@@ -48,11 +64,13 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <field name="state" widget="statusbar" options="{'clickable':'1'}" />
+                        <field name="state" widget="statusbar"  />
                         <button name="allocated_button" widget="statusbar" options="{'clickable':'1'}"
                             string='Allocated' type='object' />
                         <button name="pending_button" widget="statusbar" options="{'clickable':'1'}"
                             string='Pending' type='object' />
+                        <button type="action" name="%(functional_action)d" string="Functional Training" title="Send to " />
+
                     </header>
                     <sheet>
                         <widget name="web_ribbon" title="Pending" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'pending')]}"/>
@@ -68,6 +86,7 @@
                                 <field name='laptop_assigned' />
                                 <field name='desk_no' />
                                 <field name="status" invisible = '1'/>
+                                <field name="coach"/>
                             </group>
                             <group>
                                 <field name="intern_type" />
@@ -85,6 +104,12 @@
                             </page>
                         </notebook>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" />
+
+                        <field name="activity_ids" />
+                        <field name="message_ids" />
+                    </div>
                 </form>
 
             </field>

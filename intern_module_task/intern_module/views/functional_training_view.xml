@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    
-    <record id="intern_role_list_view_form" model="ir.ui.view">
+    <record id="functional_list_view_form" model="ir.ui.view">
         <field name="name">List View</field>
-        <field name="model">role.allocation</field>
+        <field name="model">functional.training</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name" />
+                <!-- <field name="coach"/>
+                <field name="course_link"/> -->
             </tree>
         </field>
     </record>
 
-
-    <record id="intern_list_form" model="ir.ui.view">
+    <record id="functional_list_form" model="ir.ui.view">
         <field name="name">List View</field>
-        <field name="model">role.allocation</field>
+        <field name="model">functional.training</field>
         <field name="arch" type="xml">
            <form>
             <sheet>
                 <h1>
-                    <field name="name" />
+                    <field name="name"/>
                 </h1>
+                <group>
+                    <field name="course_link" widget="url"/>
+                </group>
+               
                 <notebook>
                     <page name="intern">
-                        <field name="intern_type_ids" type="xml">
+                        <field name="coach_ids" type="xml">
                             <tree editable = 'bottom'>
                                 <field name="name"></field>
+                                <field name="intern_type"></field>
                                 <field name="email_id"></field>
+                                <field name="coach"></field>
                             </tree>
                         </field>
                     </page>
@@ -35,5 +41,4 @@
            </form>
         </field>
     </record>
-        
 </odoo>
