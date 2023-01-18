@@ -14,6 +14,7 @@
         'views/laptop_view.xml',
         'views/view_equipment.xml',
         'views/functional_training_view.xml',
+        'views/college_information_view.xml',
     ],
     
     'demo' : [
@@ -26,6 +27,7 @@
     
     'application' : True,
     'installable' : True,
+    'license' : 'LGPL-3',
     
     
 }

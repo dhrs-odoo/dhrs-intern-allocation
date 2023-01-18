@@ -3,7 +3,6 @@
     <data>
         <record model="intern.allocation" id="intern_allocation_demo">
             <field name="name">Dhrumil Shah</field>
-            <field name="cllg_name">Charusat University</field>
             <field name="contact_details">9106352845</field>
             <field name="joining_date">2022-07-12</field>
             <field name="laptop_assigned"> 4</field> 
@@ -11,7 +10,6 @@
         </record>
         <record model="intern.allocation" id="intern_allocation_demo1">
             <field name="name">Deependra Solanki</field>
-            <field name="cllg_name">Parul University</field>
             <field name="contact_details">9687396038</field>
             <field name="joining_date">2022-12-12</field>
             <field name="laptop_assigned"> 1</field>
@@ -19,7 +17,6 @@
         </record>
         <record model="intern.allocation" id="intern_allocation_demo2">
             <field name="name">Renil Kajavadra</field>
-            <field name="cllg_name">Charusat University</field>
             <field name="contact_details">9265975541</field>
             <field name="joining_date">2022-07-12</field>
             <field name="laptop_assigned"> 2</field>
@@ -27,7 +24,6 @@
         </record>
         <record model="intern.allocation" id="intern_allocation_demo3">
             <field name="name">Om Rabara</field>
-            <field name="cllg_name">Charusat University</field>
             <field name="contact_details">9601922474</field>
             <field name="joining_date">2022-07-12</field>
             <field name="laptop_assigned"> 3</field>
@@ -35,7 +31,6 @@
         </record>
         <record model="intern.allocation" id="intern_allocation_demo4">
             <field name="name">Yash Vaishnav</field>
-            <field name="cllg_name">Charusat University</field>
             <field name="contact_details">9737314302</field>
             <field name="joining_date">2022-07-12</field>
             <field name="laptop_assigned"> 5</field>

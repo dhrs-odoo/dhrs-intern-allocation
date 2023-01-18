@@ -8,7 +8,7 @@ class internDesk(models.Model):
      _inherit = ['mail.thread', 'mail.activity.mixin']
 
      name = fields.Char(string='Intern Name',required = True)
-     cllg_name = fields.Char(string='College Name',required = True)
+     cllg_name = fields.Many2one('college.information',string='College Name')
      contact_details = fields.Char(string = 'Contact No',required=True)
      joining_date = fields.Date(string = 'Joining Date')
      laptop_assigned = fields.Many2one("laptop.allocation" , string='Laptop Assigned' , tracking = True)

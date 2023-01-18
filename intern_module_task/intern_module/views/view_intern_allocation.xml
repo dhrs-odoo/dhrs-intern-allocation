@@ -27,6 +27,11 @@
             <field name="res_model">role.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
+        <record id="intern_cllg_name_action" model="ir.actions.act_window">
+            <field name="name">College Details</field>
+            <field name="res_model">college.information</field>
+            <field name="view_mode">tree,form</field>
+        </record>
         <record id="functional_action" model="ir.actions.act_window">
             <field name="name">Functional Training</field>
             <field name="res_model">functional.training</field>
