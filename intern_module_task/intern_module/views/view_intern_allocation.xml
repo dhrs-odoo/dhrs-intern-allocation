@@ -47,7 +47,7 @@
             <field name="name">Tree.View</field>
             <field name="model">intern.allocation</field>
             <field name="arch" type="xml">
-                <tree decoration-success="state in ('allocated')" decoration-danger="state in ('pending')">
+                <tree decoration-success="state in ('allocated')">
                     <field name="name" />
                     <field name="cllg_name" optional='hide' />
                     <field name="contact_details" />
@@ -64,17 +64,14 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <field name="state" widget="statusbar"  />
+                        <field name="state" widget="statusbar" options="{'clickable':'1'}" default = "new"/>
                         <button name="allocated_button" widget="statusbar" options="{'clickable':'1'}"
                             string='Allocated' type='object' />
-                        <button name="pending_button" widget="statusbar" options="{'clickable':'1'}"
-                            string='Pending' type='object' />
-                        <button type="action" name="%(functional_action)d" string="Functional Training" title="Send to " />
+                        <!-- <button type="action" name="%(functional_action)d" string="Functional Training" title="Send to " /> -->
 
                     </header>
                     <sheet>
-                        <widget name="web_ribbon" title="Pending" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'pending')]}"/>
-                        <widget name="web_ribbon" title="Allocated" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'allocated')]}"/>
+                        <widget name="web_ribbon" title="Allocated" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'new')]}"/>
                         <label for="name">Name</label>
                         <h1>
                             <field name="name" />
@@ -87,6 +84,7 @@
                                 <field name='desk_no' />
                                 <field name="status" invisible = '1'/>
                                 <field name="coach"/>
+                                <field name="assigned_date" attrs="{'invisible' : [('coach','=',False)]}"/>
                             </group>
                             <group>
                                 <field name="intern_type" />
