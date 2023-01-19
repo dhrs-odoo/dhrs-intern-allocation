@@ -17,8 +17,9 @@ class internDesk(models.Model):
      desk_no=fields.Many2one("desk.allocation", string="Desk No")
      other_equipments = fields.Many2many("equipment.allocation" , string="Other Equipments")
      email_id = fields.Char(string = 'Email-Id')
-     coach = fields.Many2one("functional.training",  string = "Coach Name" , tracking = True)
+     coach = fields.Many2one("coach.coach",  string = "Coach Name" , tracking = True)
      assigned_date = fields.Date(string = "Assigned Date",default = fields.Datetime.now())
+     evaluation_ids = fields.One2many('evaluation.evaluation','user_admin_id',string="evaluation")
      
      
      state = fields.Selection(selection = [('new','New'),('functional','Functional Training'),('backend','Odoo Backend'),('frontend','Odoo Frontend'),('owl','Owl JS'),('done','Done')],tracking = True)

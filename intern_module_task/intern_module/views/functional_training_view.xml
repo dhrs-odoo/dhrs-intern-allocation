@@ -2,7 +2,7 @@
 <odoo>
     <record id="functional_list_view_form" model="ir.ui.view">
         <field name="name">List View</field>
-        <field name="model">functional.training</field>
+        <field name="model">coach.coach</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name" />
@@ -14,7 +14,7 @@
 
     <record id="functional_list_form" model="ir.ui.view">
         <field name="name">List View</field>
-        <field name="model">functional.training</field>
+        <field name="model">coach.coach</field>
         <field name="arch" type="xml">
            <form>
             <sheet>

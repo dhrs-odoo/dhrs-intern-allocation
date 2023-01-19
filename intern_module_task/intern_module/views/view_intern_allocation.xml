@@ -34,7 +34,7 @@
         </record>
         <record id="functional_action" model="ir.actions.act_window">
             <field name="name">Functional Training</field>
-            <field name="res_model">functional.training</field>
+            <field name="res_model">coach.coach</field>
             <field name="view_mode">tree,form</field>
         </record>
         <record id="tech_front_action" model="ir.actions.act_window">
@@ -104,6 +104,19 @@
                                 <group>
                                     <field name="description"></field>
                                 </group>
+                            </page>
+                            <page string="Evaluation">
+                                <field name="evaluation_ids">
+                                    <tree editable="bottom">
+                                        <field name="odoo_concept"/>
+                                        <!-- <field name="code_quality"/>
+                                            <field name="productivity"/> -->
+                                            <field name="interaction"/>
+                                            <!-- <field name="evaluated"/> -->
+                                            <field name="remarks"/>
+                                            <field name="week"/>
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>

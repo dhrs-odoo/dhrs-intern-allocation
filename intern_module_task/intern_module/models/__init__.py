@@ -7,3 +7,4 @@ from . import desk_allocation
 from . import equipment_allocation
 from . import intern_functional_training
 from . import cllg_information
+from . import evaluation

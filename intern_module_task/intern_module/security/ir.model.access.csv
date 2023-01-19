@@ -4,5 +4,6 @@ intern_module.access_equipment_allocation,access_equipment_allocation,intern_mod
 intern_module.access_role_allocation,access_role_allocation,intern_module.model_role_allocation,base.group_user,1,1,1,1
 intern_module.access_desk_allocation,access_desk_allocation,intern_module.model_desk_allocation,base.group_user,1,1,1,1
 intern_module.access_laptop_allocation,access_laptop_allocation,intern_module.model_laptop_allocation,base.group_user,1,1,1,1
-intern_module.access_functional_training,access_functional_training,intern_module.model_functional_training,base.group_user,1,1,1,1
+intern_module.access_coach_coach,access_coach_coach,intern_module.model_coach_coach,base.group_user,1,1,1,1
 intern_module.access_college_information,access_college_information,intern_module.model_college_information,base.group_user,1,1,1,1
+intern_module.access_evaluation_evaluation,access_evaluation_evaluation,intern_module.model_evaluation_evaluation,base.group_user,1,1,1,1
