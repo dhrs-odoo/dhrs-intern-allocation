@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="evaluatedby.evaluatedby" id="pr_demo_data">
+            <field name="name">Pratik Raval (prra)</field>
+        </record>
+        <record model="evaluatedby.evaluatedby" id="kr_demo_data">
+            <field name="name">Krina Oza (kro)</field>
+        </record>
+        <record model="evaluatedby.evaluatedby" id="so_demo_data">
+            <field name="name">Soumya Mukherjee (somu)</field>
+        </record>
+        <record model="evaluatedby.evaluatedby" id="ad_demo_data">
+            <field name="name">Adesh Jolhe (adjo)</field>
+        </record>
+        <record model="evaluatedby.evaluatedby" id="sa_demo_data">
+            <field name="name">Sanjay ()shsa</field>
+        </record>
+    </data>
+</odoo>

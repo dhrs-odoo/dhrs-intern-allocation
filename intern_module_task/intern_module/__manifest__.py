@@ -23,6 +23,8 @@
         'demo/intern_role_demo.xml',
         'demo/desk_demo_data.xml',
         'demo/other_equipment_demo_data.xml',
+        'demo/evaluatedby_demo_data.xml',
+        'demo/coach_demo_data.xml',
     ],
     
     'application' : True,

@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="intern_menu_root" name="Intern Desk Allocation" action="intern_action"
+    <menuitem id="intern_menu_root" name="Intern OnBoarding" action="intern_action"
         web_icon="intern_module,static/description/odooo.png">
-        <menuitem id="desks_menu" name="Desks" action="desks_action" />
-        <menuitem id="inventory_menu" name="Inventory">
-            <menuitem id="equipments_menu" name="Equipments" action="equipment_action" />
-            <menuitem id="laptop_menu" name="Laptops" action="laptop_action" />     
-        </menuitem>
         <menuitem id="intern_menu" name="Interns">
             <menuitem id="intern_role_menu" name="Intern Role" action="intern_role_action" />
             <menuitem id="intern_cllg_name" name="College Details" action="intern_cllg_name_action" />
         </menuitem>
-
-        <menuitem id="intern_test_menu" name="Trainings">
-            <menuitem id="intern_functional" name="Functional Training" action="functional_action" />
-            <menuitem id="intern_tech_front" name="Technical Frontend" action="tech_front_action" />
-            <menuitem id="intern_tech_back" name="Technical Backend" action="tech_back_action" />
+        <menuitem id="desks_menu" name="Desks" action="desks_action" />
+        <menuitem id="accessories_menu" name="Accessories">
+            <menuitem id="equipments_menu" name="Equipments" action="equipment_action" />
+            <menuitem id="laptop_menu" name="Laptops" action="laptop_action" />
         </menuitem>
 
+        <menuitem id="intern_test_menu" name="Trainings">
+            <menuitem id="intern_functional" name="Coach Information" action="functional_action" />
+            <menuitem id="evaluated_menu" name="Evaluated By" action="evaluated_action" />
+
+        </menuitem>
     </menuitem>
 </odoo>

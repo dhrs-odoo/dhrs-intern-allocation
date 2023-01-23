@@ -32,7 +32,6 @@
                                 <field name="name"></field>
                                 <field name="intern_type"></field>
                                 <field name="email_id"></field>
-                                <field name="assigned_date"></field>
                             </tree>
                         </field>
                     </page>

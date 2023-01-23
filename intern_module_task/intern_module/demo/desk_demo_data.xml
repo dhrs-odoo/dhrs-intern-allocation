@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record model="desk.allocation" id="u_demo_data">
-            <field name="name">U Shape</field>
+        <record model="desk.allocation" id="l1_demo_data">
+            <field name="desk_type">l shape</field>
+            <field name="desk_no">1</field>
+        </record>
+        <record model="desk.allocation" id="l2_demo_data">
+            <field name="desk_type">l shape</field>
+            <field name="desk_no">2</field>
+        </record>
+        <record model="desk.allocation" id="l3_demo_data">
+            <field name="desk_type">l shape</field>
             <field name="desk_no">3</field>
         </record>
-        <record model="desk.allocation" id="l_demo_data">
-            <field name="name">L Shape</field>
+        <record model="desk.allocation" id="l4_demo_data">
+            <field name="desk_type">l shape</field>
             <field name="desk_no">4</field>
         </record>
-        <record model="desk.allocation" id="straight_demo_data">
-            <field name="name">Straight Desk</field>
-            <field name="desk_no">7</field>
+        <record model="desk.allocation" id="sd1_demo_data">
+            <field name="desk_type">straight desk</field>
+            <field name="desk_no">1</field>
         </record>
-        <record model="desk.allocation" id="curve_demo_data">
-            <field name="name">Curve Desk</field>
-            <field name="desk_no">10</field>
+        <record model="desk.allocation" id="sd2_demo_data">
+            <field name="desk_type">straight desk</field>
+            <field name="desk_no">2</field>
+        </record>
+        <record model="desk.allocation" id="sd3_demo_data">
+            <field name="desk_type">straight desk</field>
+            <field name="desk_no">3</field>
+        </record>
+        <record model="desk.allocation" id="sd4_demo_data">
+            <field name="desk_type">straight desk</field>
+            <field name="desk_no">4</field>
         </record>
     </data>
 </odoo>

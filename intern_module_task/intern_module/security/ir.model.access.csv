@@ -7,3 +7,5 @@ intern_module.access_laptop_allocation,access_laptop_allocation,intern_module.mo
 intern_module.access_coach_coach,access_coach_coach,intern_module.model_coach_coach,base.group_user,1,1,1,1
 intern_module.access_college_information,access_college_information,intern_module.model_college_information,base.group_user,1,1,1,1
 intern_module.access_evaluation_evaluation,access_evaluation_evaluation,intern_module.model_evaluation_evaluation,base.group_user,1,1,1,1
+intern_module.access_evaluatedby_evaluatedby,access_evaluatedby_evaluatedby,intern_module.model_evaluatedby_evaluatedby,base.group_user,1,1,1,1
+intern_module.access_personal_module,access_personal_module,intern_module.model_personal_module,base.group_user,1,1,1,1

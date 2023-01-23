@@ -6,7 +6,7 @@
         <field name="model">desk.allocation</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" />
+                <field name="desk_type" />
                 <field name="desk_no"/>
             </tree>
         </field>
@@ -19,20 +19,11 @@
         <field name="arch" type="xml">
            <form>
             <sheet>
-                <h1>
-                    <field name="name" />
-                </h1>
-                <notebook>
-                    <page name="intern">
-                        <field name="desk_no_ids" type="xml">
-                            <tree editable = 'bottom'>
-                                <field name="name"></field>
-                                <field name="intern_type"></field>
-                                <field name="email_id"></field>
-                            </tree>
-                        </field>
-                    </page>
-                </notebook>
+                <group>
+                        <field name="desk_no"/>
+                        <field name="desk_type"/>
+                        <field name="is_assigned"/>
+                </group>
             </sheet>
            </form>
         </field>

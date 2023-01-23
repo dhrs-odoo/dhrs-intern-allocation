@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="coach.coach" id="pra_demo_data">
+            <field name="name">Pratik Raval (prra)</field>
+            <field name="course_link">https://www.odoo.com/documentation/16.0/developer/howtos/rdtraining.html</field>
+        </record>
+        <record model="coach.coach" id="kri_demo_data">
+            <field name="name">Krina Oza (kro)</field>
+            <field name="course_link">https://www.odoo.com/slides/getting-started-15</field>
+        </record>
+        <record model="coach.coach" id="sou_demo_data">
+            <field name="name">Soumya Mukherjee (somu)</field>
+            <field name="course_link">https://github.com/odoo/owl#documentation</field>
+        </record>
+        <record model="coach.coach" id="ade_demo_data">
+            <field name="name">Adesh Jolhe (adjo)</field>
+            <field name="course_link">https://www.gitkraken.com/learn/git#concepts</field>
+        </record>
+        <record model="coach.coach" id="san_demo_data">
+            <field name="name">Sanjay (shsa)</field>
+            <field name="course_link">https://www.odoo.com/slides/getting-started-15</field>
+        </record>
+    </data>
+</odoo>

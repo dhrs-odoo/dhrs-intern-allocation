@@ -2,8 +2,13 @@
 <odoo>
     <data>
         <record id="intern_action" model="ir.actions.act_window">
-            <field name="name">Intern Desk Allocation</field>
+            <field name="name">Intern OnBoarding</field>
             <field name="res_model">intern.allocation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="intern_role_action" model="ir.actions.act_window">
+            <field name="name">Intern Role</field>
+            <field name="res_model">role.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
         <record id="desks_action" model="ir.actions.act_window">
@@ -22,11 +27,6 @@
             <field name="res_model">laptop.allocation</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <record id="intern_role_action" model="ir.actions.act_window">
-            <field name="name">Intern Role</field>
-            <field name="res_model">role.allocation</field>
-            <field name="view_mode">tree,form</field>
-        </record>
         <record id="intern_cllg_name_action" model="ir.actions.act_window">
             <field name="name">College Details</field>
             <field name="res_model">college.information</field>
@@ -37,16 +37,14 @@
             <field name="res_model">coach.coach</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <record id="tech_front_action" model="ir.actions.act_window">
-            <field name="name">Technical Frontend Training</field>
-            <field name="res_model">intern.allocation</field>
+
+
+        <record id="evaluated_action" model="ir.actions.act_window">
+            <field name="name">Evaluated By</field>
+            <field name="res_model">evaluatedby.evaluatedby</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <record id="tech_back_action" model="ir.actions.act_window">
-            <field name="name">Technical Backend Training</field>
-            <field name="res_model">intern.allocation</field>
-            <field name="view_mode">tree,form</field>
-        </record>
+
 
         <record id="model_view_tree" model="ir.ui.view">
             <field name="name">Tree.View</field>
@@ -57,7 +55,7 @@
                     <field name="cllg_name" optional='hide' />
                     <field name="contact_details" />
                     <field name="joining_date" />
-                    <field name="state" invisible='1'/>
+                    <field name="state" invisible='1' />
                 </tree>
             </field>
         </record>
@@ -69,14 +67,20 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <field name="state" widget="statusbar" options="{'clickable':'1'}" default = "new"/>
-                        <button name="allocated_button" widget="statusbar" options="{'clickable':'1'}"
+                        <field name="state" widget="statusbar" />
+                        <button name="allocated_button" widget="statusbar"
+                            options="{'clickable':'1'}"
                             string='Allocated' type='object' />
-                        <!-- <button type="action" name="%(functional_action)d" string="Functional Training" title="Send to " /> -->
+                        <!-- <button type="action" name="%(functional_action)d" string="Functional
+                        Training" title="Send to " /> -->
 
                     </header>
                     <sheet>
-                        <widget name="web_ribbon" title="Allocated" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'new')]}"/>
+                        <widget name="web_ribbon" title="Allocated" bg_color="bg-success"
+                            attrs="{'invisible': [('status', '!=', 'allocated')]}" />
+
+                        <widget name="web_ribbon" title="Pending" bg_color="bg-danger"
+                            attrs="{'invisible': [('state', '!=', 'new')]}" />
                         <label for="name">Name</label>
                         <h1>
                             <field name="name" />
@@ -87,9 +91,8 @@
                                 <field name="joining_date" />
                                 <field name='laptop_assigned' />
                                 <field name='desk_no' />
-                                <field name="status" invisible = '1'/>
-                                <field name="coach"/>
-                                <field name="assigned_date" attrs="{'invisible' : [('coach','=',False)]}"/>
+                                <field name="status" invisible='1' />
+                                <field name="coach" />
                             </group>
                             <group>
                                 <field name="intern_type" />
@@ -97,6 +100,8 @@
                                 <field name="other_equipments" widget="many2many_tags"
                                     options="{'color_field': 'color'}" />
                                 <field name="email_id" widget="email" />
+                                <field name="requirement" />
+                                <field name="project_name" attrs="{'invisible': [('requirement', '!=', 'project')]}"/>
                             </group>
                         </group>
                         <notebook>
@@ -108,13 +113,24 @@
                             <page string="Evaluation">
                                 <field name="evaluation_ids">
                                     <tree editable="bottom">
-                                        <field name="odoo_concept"/>
-                                        <!-- <field name="code_quality"/>
-                                            <field name="productivity"/> -->
-                                            <field name="interaction"/>
-                                            <!-- <field name="evaluated"/> -->
-                                            <field name="remarks"/>
-                                            <field name="week"/>
+                                        <field name="week" />
+                                        <field name="odoo_concept" />
+                                        <field name="code_quality" />
+                                        <field name="productivity" />
+                                        <field name="interaction" />
+                                        <field name="evaluatedby" widget="many2many_tags"/>
+                                        <field name="remarks" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Personal Module">
+                                <field name="personal_module_ids">
+                                    <tree editable="bottom">
+                                        <field name="module_name" />
+                                        <field name="doc_file" />
+                                        <field name="models" />
+                                        <field name="documentation" />
+                                        <field name="github" />
                                     </tree>
                                 </field>
                             </page>
@@ -136,18 +152,19 @@
             <field name="model">intern.allocation</field>
             <field name="arch" type="xml">
                 <search string="Intern Allocation">
-                    <field name="name"/>
-                    <field name="laptop_assigned"/>
-                    <field name="cllg_name"/>
-                    <field name="other_equipments"/>
-                    <field name="intern_type"/>
+                    <field name="name" />
+                    <field name="laptop_assigned" />
+                    <field name="cllg_name" />
+                    <field name="other_equipments" />
+                    <field name="intern_type" />
 
                     <group expand="1" string="Group By">
-                        <filter string="Laptop Assigned" name="laptop_assigned" context="{'group_by':'laptop_assigned'}" />
+                        <filter string="Laptop Assigned" name="laptop_assigned"
+                            context="{'group_by':'laptop_assigned'}" />
                         <separator />
                         <filter string="College Name" name="cllg_name"
                             context="{'group_by': 'cllg_name'}" />
-                    </group> 
+                    </group>
                 </search>
             </field>
         </record>
