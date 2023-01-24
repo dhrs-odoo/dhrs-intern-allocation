@@ -25,6 +25,7 @@
         'demo/other_equipment_demo_data.xml',
         'demo/evaluatedby_demo_data.xml',
         'demo/coach_demo_data.xml',
+        'demo/cllg_demo_data.xml'
     ],
     
     'application' : True,

@@ -85,23 +85,28 @@
                         <h1>
                             <field name="name" />
                         </h1>
+                        <h2>
+                            <field name= "intern_type"/>
+                        </h2>
                         <group>
                             <group>
                                 <field name="cllg_name" />
                                 <field name="joining_date" />
                                 <field name='laptop_assigned' />
-                                <field name='desk_no' />
                                 <field name="status" invisible='1' />
-                                <field name="coach" />
+                                <field name="other_equipments" widget="many2many_tags"
+                                options="{'color_field': 'color'}" />
+                                <field name="requirement" />
+                                
                             </group>
                             <group>
+                                
                                 <field name="intern_type" />
+                                <field name='desk_no' />
                                 <field name="contact_details" widget="phone" />
-                                <field name="other_equipments" widget="many2many_tags"
-                                    options="{'color_field': 'color'}" />
                                 <field name="email_id" widget="email" />
-                                <field name="requirement" />
-                                <field name="project_name" attrs="{'invisible': [('requirement', '!=', 'project')]}"/>
+                                <field name="coach" />
+                                <field name="project_name" attrs="{'invisible': [('requirement', '!=', 'project')], 'required': [('requirement', '=', 'project')]}"/>
                             </group>
                         </group>
                         <notebook>
@@ -127,10 +132,10 @@
                                 <field name="personal_module_ids">
                                     <tree editable="bottom">
                                         <field name="module_name" />
-                                        <field name="doc_file" />
+                                        <field name="doc_file" widget="url"/>
                                         <field name="models" />
-                                        <field name="documentation" />
-                                        <field name="github" />
+                                        <field name="documentation" widget="url" />
+                                        <field name="github" widget="url"/>
                                     </tree>
                                 </field>
                             </page>

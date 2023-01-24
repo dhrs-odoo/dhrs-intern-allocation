@@ -10,16 +10,16 @@ class internDesk(models.Model):
 
     name = fields.Char(string='Intern Name', required=True)
     cllg_name = fields.Many2one('college.information', string='College Name')
-    contact_details = fields.Char(string='Contact No', required=True)
+    contact_details = fields.Char(string='Work Mobile', required=True)
     joining_date = fields.Date(string='Joining Date')
     laptop_assigned = fields.Many2one(
         "laptop.allocation", string='Laptop Assigned', tracking=True)
-    intern_type = fields.Many2one("role.allocation", string='Intern Role')
+    intern_type = fields.Many2one("role.allocation", string='Department')
     description = fields.Char(string='Description')
     desk_no = fields.Many2one("desk.allocation", string="Desk No",tracking=True)
     other_equipments = fields.Many2many(
         "equipment.allocation", string="Other Equipments")
-    email_id = fields.Char(string='Email-Id')
+    email_id = fields.Char(string='Work Email')
     coach = fields.Many2one(
         "coach.coach",  string="Coach Name", tracking=True)
     evaluation_ids = fields.One2many(
@@ -35,6 +35,7 @@ class internDesk(models.Model):
         selection=[('project', 'Project'), ('report', 'Weekly Report'),
                    ('none', 'None')],default="none",string="Requirement of college")
     project_name = fields.Char(string="Project Name")
+    
     
 
     _sql_constraints = [

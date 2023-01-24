@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="college.information" id="charusat_demo_data">
+            <field name="name">Charusat University</field>
+        </record>
+        <record model="college.information" id="dd_demo_data">
+            <field name="name">Dharmsinh Desai University</field>
+        </record>
+        <record model="college.information" id="nu_demo_data">
+            <field name="name">Nirma University</field>
+        </record>
+        <record model="college.information" id="sp_demo_data">
+            <field name="name">Sardar Patel University</field>
+        </record>
+        <record model="college.information" id="pu_demo_data">
+            <field name="name">Parul University</field>
+        </record>
+    </data>
+</odoo>
