@@ -15,6 +15,7 @@
         'views/view_equipment.xml',
         'views/functional_training_view.xml',
         'views/college_information_view.xml',
+        'views/document_upload_view.xml',
     ],
     
     'demo' : [
@@ -25,7 +26,7 @@
         'demo/other_equipment_demo_data.xml',
         'demo/evaluatedby_demo_data.xml',
         'demo/coach_demo_data.xml',
-        'demo/cllg_demo_data.xml'
+        'demo/cllg_demo_data.xml',
     ],
     
     'application' : True,

@@ -14,7 +14,7 @@ class internDesk(models.Model):
     joining_date = fields.Date(string='Joining Date')
     laptop_assigned = fields.Many2one(
         "laptop.allocation", string='Laptop Assigned', tracking=True)
-    intern_type = fields.Many2one("role.allocation", string='Department')
+    intern_type = fields.Many2one("role.allocation", string='Intern Role')
     description = fields.Char(string='Description')
     desk_no = fields.Many2one("desk.allocation", string="Desk No",tracking=True)
     other_equipments = fields.Many2many(
@@ -30,13 +30,10 @@ class internDesk(models.Model):
     state = fields.Selection(selection=[('new', 'New'), ('functional', 'Functional Training'), ('backend', 'Odoo Backend'), (
         'frontend', 'Odoo Frontend'), ('owl', 'Owl JS'), ('done', 'Done')], tracking=True, default="new")
     status = fields.Selection(selection=[('allocated', 'Allocated')])
-    
-    requirement = fields.Selection(
-        selection=[('project', 'Project'), ('report', 'Weekly Report'),
-                   ('none', 'None')],default="none",string="Requirement of college")
     project_name = fields.Char(string="Project Name")
-    
-    
+    intern_img = fields.Binary()
+    department = fields.Selection(selection=[('r&d','Research & Development'),('offshore','Offshore'),('upgrade','Upgrade')],string="Department")
+    document_ids = fields.One2many('document.document','document_id')
 
     _sql_constraints = [
         ('name_unique', 'UNIQUE(name)', 'Name must be Unique')]

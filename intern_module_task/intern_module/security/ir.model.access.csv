@@ -9,3 +9,4 @@ intern_module.access_college_information,access_college_information,intern_modul
 intern_module.access_evaluation_evaluation,access_evaluation_evaluation,intern_module.model_evaluation_evaluation,base.group_user,1,1,1,1
 intern_module.access_evaluatedby_evaluatedby,access_evaluatedby_evaluatedby,intern_module.model_evaluatedby_evaluatedby,base.group_user,1,1,1,1
 intern_module.access_personal_module,access_personal_module,intern_module.model_personal_module,base.group_user,1,1,1,1
+intern_module.access_document_document,access_document_document,intern_module.model_document_document,base.group_user,1,1,1,1

@@ -10,3 +10,4 @@ from . import cllg_information
 from . import evaluation
 from . import evaluatedby   
 from . import personal_module_model
+from . import document_upload
