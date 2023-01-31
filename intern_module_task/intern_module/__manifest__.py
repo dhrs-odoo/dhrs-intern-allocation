@@ -5,7 +5,9 @@
     'author' : 'Dhrumil Shah',
     'depends' : ['base','mail'],
     'version' : '1.0',
+    'category' : 'Intern Allocation/Roles',
     'data' : [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/view_intern_allocation.xml',
         'views/action_intern_allocation.xml',

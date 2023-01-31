@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models
+from odoo import fields, models, api
 from odoo.exceptions import UserError, ValidationError
 
 
@@ -16,7 +16,7 @@ class internDesk(models.Model):
         "laptop.allocation", string='Laptop Assigned', tracking=True)
     intern_type = fields.Many2one("role.allocation", string='Intern Role')
     description = fields.Char(string='Description')
-    desk_no = fields.Many2one("desk.allocation", string="Desk No",tracking=True)
+    desk_no = fields.Many2one("desk.allocation", string="Desk No",tracking=True,domain="[('is_assigned','=',False)]")
     other_equipments = fields.Many2many(
         "equipment.allocation", string="Other Equipments")
     email_id = fields.Char(string='Work Email')
@@ -30,14 +30,24 @@ class internDesk(models.Model):
     state = fields.Selection(selection=[('new', 'New'), ('functional', 'Functional Training'), ('backend', 'Odoo Backend'), (
         'frontend', 'Odoo Frontend'), ('owl', 'Owl JS'), ('done', 'Done')], tracking=True, default="new")
     status = fields.Selection(selection=[('allocated', 'Allocated')])
-    project_name = fields.Char(string="Project Name")
     intern_img = fields.Binary()
     department = fields.Selection(selection=[('r&d','Research & Development'),('offshore','Offshore'),('upgrade','Upgrade')],string="Department")
     document_ids = fields.One2many('document.document','document_id')
+    password = fields.Char('Password')
+    requirement = fields.Selection (selection=[('project', 'Project'), ('report', 'Weekly Report'),
+                   ('none', 'None')],default="none",string="Requirement of college")
+    project_name = fields.Char(string="Project Name")
+    
+    
+    is_readonly = fields.Boolean('Readonly',default=False,compute ="_is_readonly")
+
+    
 
     _sql_constraints = [
         ('name_unique', 'UNIQUE(name)', 'Name must be Unique')]
 
+
+        # For auto allocating the desk
     def allocated_button(self):
         for record in self:
           domain = ['is_assigned', '=', False]
@@ -49,17 +59,28 @@ class internDesk(models.Model):
                raise ValidationError("You don't have desk available to assign.")
                
           
-
           if record.desk_no:
                record.status = 'allocated'
                record.state = 'functional'
           else:
-               raise UserError('You need to assign seat no first')
-
-    # def pending_button(self):
-    #      for record in self:
-    #           if record.status == 'allocated':
-    #                raise UserError('You have already allocated the interns')
-    #           else :
-    #                record.status == 'pending'
-    #                record.state  == 'pending'
+               raise UserError('You need to assign seat no first')            
+    
+    @api.model 
+    def create(self,vals):
+            id = self.env['res.users'].search([('name','=',vals['name'])]).id
+            if not id:
+                self.env['res.users'].create({
+                    'name': vals['name'],
+                    'login':vals['email_id'],
+                    'password':vals['password']
+                })
+            return super(internDesk,self).create(vals)
+        
+    def _is_readonly(self):
+        for rec in self:
+            usr = self.env['res.users'].browse(self.env.uid)
+            if usr.has_group('intern_module.intern_group_user'):
+                rec.is_readonly = True
+            else:
+                rec.is_readonly = False
+    attrs="{'readonly':[('is_readonly','=',True)]}"
