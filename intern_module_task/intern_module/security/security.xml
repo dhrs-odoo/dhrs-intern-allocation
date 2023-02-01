@@ -11,6 +11,12 @@
       <field name="name">Coach</field>
       <field name="category_id" ref="base.module_category_intern_allocation_roles" />
     </record>
+
+    <record id="intern_group_evaluator" model="res.groups">
+      <field name="name">Evaluator</field>
+      <field name="category_id" ref="base.module_category_intern_allocation_roles"></field>
+    </record>
+
     <record id="intern_group_user_login" model="ir.rule">
       <field name="name">Intern User</field>
       <field name="model_id" ref="intern_module.model_intern_allocation" />
@@ -18,10 +24,16 @@
       <field name="domain_force">[('name', '=', user.name)]</field>
     </record>
 
+    <record id="evaluator_group_login" model="ir.rule">
+      <field name="name">Evaluator</field>
+      <field name="model_id" ref="intern_module.model_intern_allocation" />
+      <field name="groups" eval="[(4,ref('intern_module.intern_group_evaluator'))]" />
+    </record>
+
     <record id="coach_group_login" model="ir.rule">
       <field name="name">Coach</field>
       <field name="model_id" ref="intern_module.model_intern_allocation" />
       <field name="groups" eval="[(4,ref('intern_module.intern_group_coach'))]" />
-      </record>
+    </record>
   </data>
 </odoo>

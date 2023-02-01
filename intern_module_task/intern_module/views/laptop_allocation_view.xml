@@ -42,7 +42,7 @@
                         <field name="intern_name_ids" type="xml">
                             <tree editable = 'bottom'>
                                 <field name="name"></field>
-                                <field name="email_id"></field>
+                                <field name="login"></field>
                             </tree>
                         </field>
                     </page>

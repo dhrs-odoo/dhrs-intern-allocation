@@ -4,8 +4,6 @@ class Evaluatiojn(models.Model):
      _name = "evaluation.evaluation"
      _description = "This is regarding the Evaluation"
      
-     
-    #  name = fields.Char(string='Name')
      week = fields.Integer(string = 'week')
      odoo_concept = fields.Selection(
         selection=[('ni', 'Needs Improvement'), ('me', 'Meets Expectations'),
@@ -24,6 +22,6 @@ class Evaluatiojn(models.Model):
                    ('ee', 'Exceeds Expectations'), ('sse', 'Strongly Exceed Expectations')]
     )
      
-     evaluatedby = fields.Many2many("evaluatedby.evaluatedby",string = "Evaluated By")
+     evaluatedby = fields.Many2many("res.users",string = "Evaluated By")
      remarks = fields.Text(string = "Remarks")
      intern_allocation_id = fields.Many2one('intern.allocation')

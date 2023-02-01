@@ -6,7 +6,8 @@
         <field name="model">desk.allocation</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="desk_type" />
+                <field name="sequence" widget='handle'/>
+                <field name="desk_type"/>
                 <field name="desk_no"/>
             </tree>
         </field>

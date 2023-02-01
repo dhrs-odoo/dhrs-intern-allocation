@@ -7,7 +7,7 @@
             <field name="joining_date">2022-07-12</field>
             <field name="password">123</field>
             <field name="laptop_assigned" ref = "intern_module.dell_laptop_demo_data"> </field> 
-            <field name="email_id">dhrs@odoo.com</field>  
+            <field name="login">dhrs@odoo.com</field>  
         </record>
         <record model="intern.allocation" id="intern_allocation_demo1">
             <field name="name">Deependra Solanki</field>
@@ -15,7 +15,7 @@
             <field name="joining_date">2022-12-12</field>
             <field name="password">123</field>
             <field name="laptop_assigned" ref="intern_module.asus_demo_data"> </field>
-            <field name="email_id">deso@odoo.com</field> 
+            <field name="login">deso@odoo.com</field> 
         </record>
         <record model="intern.allocation" id="intern_allocation_demo2">
             <field name="name">Renil Kajavadra</field>
@@ -23,7 +23,7 @@
             <field name="joining_date">2022-07-12</field>
             <field name="password">123</field>
             <field name="laptop_assigned" ref="intern_module.acer_demo_data" > </field>
-            <field name="email_id">reka@odoo.com</field> 
+            <field name="login">reka@odoo.com</field> 
         </record>
         <record model="intern.allocation" id="intern_allocation_demo3">
             <field name="name">Om Rabara</field>
@@ -31,7 +31,7 @@
             <field name="joining_date">2022-07-12</field>
             <field name="password">123</field>
             <field name="laptop_assigned" ref= "intern_module.lenovo_demo_data"> </field>
-            <field name="email_id">omra@odoo.com</field> 
+            <field name="login">omra@odoo.com</field> 
         </record>
         <record model="intern.allocation" id="intern_allocation_demo4">
             <field name="name">Yash Vaishnav</field>
@@ -39,7 +39,7 @@
             <field name="joining_date">2022-07-12</field>
             <field name="password">123</field> 
             <field name="laptop_assigned" ref="intern_module.hp_demo_data"> </field>
-            <field name="email_id">yava@odoo.com</field> 
+            <field name="login">yava@odoo.com</field> 
         </record>
     </data>
 </odoo>

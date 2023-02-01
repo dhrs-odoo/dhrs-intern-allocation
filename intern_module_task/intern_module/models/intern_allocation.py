@@ -7,8 +7,11 @@ class internDesk(models.Model):
     _name = "intern.allocation"
     _description = "This is regarding the intern Orientation"
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherits = {
+        'res.users': 'name_id',
+    }
 
-    name = fields.Char(string='Intern Name', required=True)
+    name_id = fields.Many2one('res.users',required=True)
     cllg_name = fields.Many2one('college.information', string='College Name')
     contact_details = fields.Char(string='Work Mobile', required=True)
     joining_date = fields.Date(string='Joining Date')
@@ -19,9 +22,8 @@ class internDesk(models.Model):
     desk_no = fields.Many2one("desk.allocation", string="Desk No",tracking=True,domain="[('is_assigned','=',False)]")
     other_equipments = fields.Many2many(
         "equipment.allocation", string="Other Equipments")
-    email_id = fields.Char(string='Work Email')
     coach = fields.Many2one(
-        "coach.coach",  string="Coach Name", tracking=True)
+        "res.users",  string="Coach Name", tracking=True)
     evaluation_ids = fields.One2many(
         'evaluation.evaluation', 'intern_allocation_id', string="evaluation")
     personal_module_ids = fields.One2many(
@@ -33,18 +35,12 @@ class internDesk(models.Model):
     intern_img = fields.Binary()
     department = fields.Selection(selection=[('r&d','Research & Development'),('offshore','Offshore'),('upgrade','Upgrade')],string="Department")
     document_ids = fields.One2many('document.document','document_id')
-    password = fields.Char('Password')
     requirement = fields.Selection (selection=[('project', 'Project'), ('report', 'Weekly Report'),
                    ('none', 'None')],default="none",string="Requirement of college")
     project_name = fields.Char(string="Project Name")
     
     
     is_readonly = fields.Boolean('Readonly',default=False,compute ="_is_readonly")
-
-    
-
-    _sql_constraints = [
-        ('name_unique', 'UNIQUE(name)', 'Name must be Unique')]
 
 
         # For auto allocating the desk
@@ -58,29 +54,14 @@ class internDesk(models.Model):
           else:
                raise ValidationError("You don't have desk available to assign.")
                
-          
-          if record.desk_no:
-               record.status = 'allocated'
-               record.state = 'functional'
-          else:
-               raise UserError('You need to assign seat no first')            
+                    
     
-    @api.model 
-    def create(self,vals):
-            id = self.env['res.users'].search([('name','=',vals['name'])]).id
-            if not id:
-                self.env['res.users'].create({
-                    'name': vals['name'],
-                    'login':vals['email_id'],
-                    'password':vals['password']
-                })
-            return super(internDesk,self).create(vals)
+     # users can readonly the fields
         
     def _is_readonly(self):
         for rec in self:
             usr = self.env['res.users'].browse(self.env.uid)
-            if usr.has_group('intern_module.intern_group_user'):
+            if usr.has_group('intern_module.intern_group_user') or usr.has_group('intern_module.intern_group_evaluator'):
                 rec.is_readonly = True
             else:
                 rec.is_readonly = False
-    attrs="{'readonly':[('is_readonly','=',True)]}"
